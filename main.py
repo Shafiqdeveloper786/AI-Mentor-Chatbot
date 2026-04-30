@@ -6,7 +6,7 @@ import google.generativeai as genai
 # -----------------------
 # Secrets se key uthayen ya direct paste karen (Lekin secrets behtar hain)
 # st.secrets["GEMINI_API_KEY"] use karne ke liye .streamlit/secrets.toml file banani hogi
-api_key = st.secrets.get("GEMINI_API_KEY", "AIzaSyCZr1o7irbtSfNXWo207cNIwXivhriTp8o")
+api_key = st.secrets.get("GEMINI_API_KEY")
 genai.configure(api_key=api_key)
 
 # -----------------------
