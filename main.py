@@ -1,18 +1,18 @@
 import streamlit as st
 from groq import Groq
 
-# ==========================================
+
 # PAGE CONFIG
-# ==========================================
+
 st.set_page_config(
     page_title="AI Mentor Elite",
     page_icon="🤖",
     layout="centered"
 )
 
-# ==========================================
+
 # 🔥 ULTRA-CLEAR UI & STYLISH AVATARS
-# ==========================================
+
 st.markdown("""
 <style>
 /* Main Background */
@@ -90,9 +90,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ==========================================
+
 # 🔐 API & SESSION STATE
-# ==========================================
+
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 if "messages" not in st.session_state:
@@ -102,9 +102,9 @@ if "messages" not in st.session_state:
 USER_AVATAR = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png" # Stylish User
 AI_AVATAR = "https://cdn-icons-png.flaticon.com/512/4712/4712035.png"   # Futuristic Robot
 
-# ==========================================
+
 # DISPLAY CHAT
-# ==========================================
+
 chat_container = st.container()
 
 with chat_container:
@@ -113,9 +113,8 @@ with chat_container:
         with st.chat_message(msg["role"], avatar=avatar):
             st.markdown(msg["content"])
 
-# ==========================================
+
 # CHAT LOGIC
-# ==========================================
 if prompt := st.chat_input("Ask me anything..."):
 
     # 1. User Message
